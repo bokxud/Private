@@ -87,6 +87,7 @@ file/
 files/
 filemanager/
 fonts/
+fonts/Playfair_Display/
 forum/
 forums/
 .git/
@@ -95,10 +96,12 @@ forums/
 gallery/
 graphql/
 home/
-image/
-images/
 img/
 img/pdf/
+image/
+images/
+images/fenetres/
+images/fenetres/fenetresbb/
 include/
 includes/
 installation/
@@ -117,6 +120,7 @@ media/
 members/login/
 media/wp-includes/
 modules/
+modules/comment/
 modules/columnadverts/
 mt/
 myadmin/
@@ -194,6 +198,7 @@ vendor/phpunit/phpunit/src/
 vendor/phpunit/phpunit/src/Util/
 vendor/phpunit/phpunit/src/Util/Log/
 vendor/phpunit/phpunit/src/Util/PHP/
+.well-known/acme-challenge/
 .well-known/
 .well-known/autoconfig/mail/
 .well-known/autoconfig/
@@ -250,6 +255,13 @@ wp-content/plugins/wp-automatic/changelog/
 wp-content/plugins/wp-pinterest-automatic/changelog/
 wp-content/plugins/wp-file-manager/
 wp-content/plugins/wp-file-manager/lib/php/
+wp-content/uploads/
+wp-content/uploads/2021/
+wp-content/uploads/2022/
+wp-content/uploads/2020/
+wp-content/uploads/2019/
+wp-content/uploads/2018/
+wp-content/uploads/2021/07/
 wp-content/themes/seotheme/
 wp-content/themes/
 wp-content/themes/classic/inc/
@@ -276,6 +288,7 @@ wp-includes/js/
 wp-includes/js/jquery/
 wp-includes/pomo/
 wp-includes/rest-api/
+wp-includes/SimplePie/Content/Type/
 wp-includes/sitemaps/
 wp-includes/sitemaps/providers/
 wp-includes/widgets/
