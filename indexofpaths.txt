@@ -193,9 +193,10 @@ vendor/phpunit/phpunit/src/
 vendor/phpunit/phpunit/src/Util/
 vendor/phpunit/phpunit/src/Util/Log/
 vendor/phpunit/phpunit/src/Util/PHP/
+.well-known/
 .well-known/autoconfig/mail/
 .well-known/autoconfig/
-.well-known/
+.well-known/pki-validation/
 web/
 web/wp-includes/
 website/blog/
