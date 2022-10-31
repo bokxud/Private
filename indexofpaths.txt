@@ -98,6 +98,7 @@ home/
 image/
 images/
 img/
+img/pdf/
 include/
 includes/
 installation/
@@ -261,6 +262,7 @@ wp-includes/IXR/
 wp-includes/PHPMailer/
 wp-includes/Requests/
 wp-includes/SimplePie/
+wp-includes/SimplePie/Parse/
 wp-includes/Text/
 wp-includes/alfacgiapi/
 wp-includes/blocks/
