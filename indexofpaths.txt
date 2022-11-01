@@ -1,3 +1,4 @@
+120/
 2018/
 2018/wp-includes/
 2019/
@@ -28,6 +29,7 @@ ALFA_DATA/
 ALFA_DATA/alfacgiapi/
 amember/admin-users/
 article/wp-json/
+article/image7/
 articles/wp-json/
 assets/
 assets/filemanager/
@@ -89,6 +91,7 @@ filemanager/
 fonts/
 fonts/Playfair_Display/
 forum/
+forum/slide_img_19/
 forums/
 .git/
 .git/config/
@@ -103,6 +106,7 @@ images/
 images/fenetres/
 images/fenetres/fenetresbb/
 include/
+include/mapping_regions/
 includes/
 installation/
 jars/upload/
