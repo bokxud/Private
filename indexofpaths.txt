@@ -279,6 +279,8 @@ wp-includes/ID3/
 wp-includes/IXR/
 wp-includes/PHPMailer/
 wp-includes/Requests/
+wp-includes/Requests/Exception/
+wp-includes/Requests/Exception/HTTP/
 wp-includes/SimplePie/
 wp-includes/SimplePie/Parse/
 wp-includes/Text/
