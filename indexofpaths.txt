@@ -13,6 +13,8 @@
 .aws/
 .aws/credentials
 administrator/
+administrator/components/
+administrator/components/com_xcloner-backupandrestore_old/
 ALFA_DATA/
 ALFA_DATA/alfacgiapi/
 admin/
