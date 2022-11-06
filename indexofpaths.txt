@@ -94,6 +94,7 @@ amember/admin-users/
 application/
 application/config/
 app/
+app/Console/
 app/etc/
 api/
 api/vendor/
