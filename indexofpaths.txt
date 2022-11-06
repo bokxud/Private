@@ -313,6 +313,7 @@ news/
 news/wp-includes/
 old-site/
 old/
+old/ouma/
 old/ALFA_DATA/
 old/ALFA_DATA/alfacgiapi/
 old/alfacgiapi/
