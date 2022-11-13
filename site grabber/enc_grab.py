@@ -5,10 +5,10 @@ def cls():
 cls()
 try:
 	import concurrent.futures
-	xxx = True
+	#xxx = True
 except:
 	from multiprocessing.pool import ThreadPool
-	xxx = False
+	#xxx = False
 red = '\x1b[31m'
 r = '\x1b[31m'
 g = '\x1b[32m'
