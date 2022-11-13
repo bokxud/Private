@@ -1,2 +1,371 @@
-import base64
-exec base64.b64decode("aW1wb3J0IHJlcXVlc3RzLHJlLG9zLHJhbmRvbQppbXBvcnQgc29ja2V0CmRlZiBjbHMoKToKCW9zLnN5c3RlbShbJ2NsZWFyJywgJ2NscyddWyhvcy5uYW1lID09ICdudCcpXSkKY2xzKCkKdHJ5OgoJaW1wb3J0IGNvbmN1cnJlbnQuZnV0dXJlcwoJeHh4ID0gVHJ1ZQpleGNlcHQ6Cglmcm9tIG11bHRpcHJvY2Vzc2luZy5wb29sIGltcG9ydCBUaHJlYWRQb29sCgl4eHggPSBGYWxzZQpyZWQgPSAnXHgxYlszMW0nCnIgPSAnXHgxYlszMW0nCmcgPSAnXHgxYlszMm0nCnkgPSAnXHgxYlszM20nCmIgPSAnXHgxYlszNG0nCm0gPSAnXHgxYlszNW0nCmMgPSAnXHgxYlszNm0nCncgPSAnXHgxYlszN20nClJJUE9OID0gRmFsc2UKZGVmIFJldCh4KToKCXRyeToKCQlyZXR1cm4gcmF3X2lucHV0KHgpCglleGNlcHQ6CgkJcmV0dXJuIGlucHV0KHgpCmxvZ28gPSAiIiIgCiAgX18gIF9fICAgICAgICBfX19fICBfX19fXyAgXyAgX19fX19fXyAgX19fICAgX19fICAKIHwgIFwvICB8ICAgICAgfCAgXyBcfCAgX18gXHwgfC8gLyAgX18gXHxfXyBcIC8gXyBcIAogfCBcICAvIHxfIF9fICB8IHxfKSB8IHwgIHwgfCAnIC98IHxfXykgfCAgKSB8IChfKSB8CiB8IHxcL3wgfCAnX198IHwgIF8gPHwgfCAgfCB8ICA8IHwgIF8gIC8gIC8gLyA+IF8gPCAKIHwgfCAgfCB8IHxfICAgfCB8XykgfCB8X198IHwgLiBcfCB8IFwgXCAvIC9ffCAoXykgfAogfF98ICB8X3xfKF8pICB8X19fXy98X19fX18vfF98XF9cX3wgIFxfXF9fX198XF9fXy8gCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogIiIiCnByaW50KHIrbG9nbysiIiJcbiAgICB7fUkgRG9uJ3QgQXNwZWN0IEFueSBSZXNwb25zaWJpbGl0eSBGb3IgQmFkIFVzc2FnZSF7fVxuXG4gQXV0aG9yOiB7fVRoZSBNci4gQkRLUjI4e31cbiBOYW1lOiB7fVRoZSBCaW5nIEJPVHt9XG4gQXBwbGljYXRpb246IHt9UHl0aG9uIDIuNyAmIDMuOSBTdXBwb3J0ZWR7fVxuIENob3NlIGEgVG9vbDp7fVxuICAxLiBCaW5nIFdlYmxpc3QgR3JhYmJlciBUb29sXG4gIDIuIEJpbmcgUmV2ZXJzaXAgVG9vbCAoVW5saW1pdGVkKVxuICAzLiBMaXZlIElQIENoZWNrICsgSVAgRnJvbSBEb21haW5cbiAgNC4gQmluZyBOb3JtYWwgRG9ya2luZ1xuICA1LiBJUCBSYW5nZXIgKyBJcCBMaXZlCiAiIiIuZm9ybWF0KGcseSxjLHksYyx5LGMsbSx3KSkKdXNlcl9hZ2VudF9saXN0ID0gWwogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS84NC4wLjQxNDcuMTA1IFNhZmFyaS81MzcuMzYnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdPVzY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvODQuMC40MTQ3LjEwNSBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wKSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvODQuMC40MTQ3LjEwNSBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoTWFjaW50b3NoOyBJbnRlbCBNYWMgT1MgWCAxMF8xNV82KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvODQuMC40MTQ3LjEwNSBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoWDExOyBMaW51eCB4ODZfNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS84NC4wLjQxNDcuMTA1IFNhZmFyaS81MzcuMzYnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQ7IHJ2Ojc5LjApIEdlY2tvLzIwMTAwMTAxIEZpcmVmb3gvNzkuMCcsCiAnTW96aWxsYS81LjAgKE1hY2ludG9zaDsgSW50ZWwgTWFjIE9TIFggMTAuMTU7IHJ2Ojc5LjApIEdlY2tvLzIwMTAwMTAxIEZpcmVmb3gvNzkuMCcsCiAnTW96aWxsYS81LjAgKFgxMTsgTGludXggaTY4NjsgcnY6NzkuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC83OS4wJywKICdNb3ppbGxhLzUuMCAoTGludXggeDg2XzY0OyBydjo3OS4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94Lzc5LjAnLAogJ01vemlsbGEvNS4wIChYMTE7IFVidW50dTsgTGludXggaTY4NjsgcnY6NzkuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC83OS4wJywKICdNb3ppbGxhLzUuMCAoWDExOyBVYnVudHU7IExpbnV4IHg4Nl82NDsgcnY6NzkuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC83OS4wJywKICdNb3ppbGxhLzUuMCAoWDExOyBGZWRvcmE7IExpbnV4IHg4Nl82NDsgcnY6NzkuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC83OS4wJywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvODQuMC40MTQ3LjEwNSBTYWZhcmkvNTM3LjM2IE9QUi83MC4wLjM3MjguOTUnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdPVzY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS84NC4wLjQxNDcuMTA1IFNhZmFyaS81MzcuMzYgT1BSLzcwLjAuMzcyOC45NScsCiAnTW96aWxsYS81LjAgKE1hY2ludG9zaDsgSW50ZWwgTWFjIE9TIFggMTBfMTVfNikgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzg0LjAuNDE0Ny4xMDUgU2FmYXJpLzUzNy4zNiBPUFIvNzAuMC4zNzI4Ljk1JywKICdNb3ppbGxhLzUuMCAoWDExOyBMaW51eCB4ODZfNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS84NC4wLjQxNDcuMTA1IFNhZmFyaS81MzcuMzYgT1BSLzcwLjAuMzcyOC45NScsCiAnTW96aWxsYS81LjAgKE1hY2ludG9zaDsgSW50ZWwgTWFjIE9TIFggMTBfMTVfNikgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzg0LjAuNDE0Ny4xMjUgU2FmYXJpLzUzNy4zNicsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzc0LjAuMzcyOS4xNTcgU2FmYXJpLzUzNy4zNicsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83Mi4wLjM2MjYuMTIxIFNhZmFyaS81MzcuMzYnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83NC4wLjM3MjkuMTY5IFNhZmFyaS81MzcuMzYnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjApIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83Mi4wLjM2MjYuMTIxIFNhZmFyaS81MzcuMzYnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzc0LjAuMzcyOS4xNjkgU2FmYXJpLzUzNy4zNicsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzY5LjAuMzQ5Ny4xMDAgU2FmYXJpLzUzNy4zNicsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzgwLjAuMzk4Ny4xNDkgU2FmYXJpLzUzNy4zNicsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzc5LjAuMzk0NS44OCBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNzkuMC4zOTQ1LjEzMCBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNzAuMC4zNTM4LjExMCBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNzAuMC4zNTM4Ljc3IFNhZmFyaS81MzcuMzYnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzc5LjAuMzk0NS4xMzAgU2FmYXJpLzUzNy4zNicsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNzguMC4zOTA0LjEwOCBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNzUuMC4zNzcwLjEwMCBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvODEuMC40MDQ0LjEyOSBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvODMuMC40MTAzLjYxIFNhZmFyaS81MzcuMzYnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzgwLjAuMzk4Ny4xNDkgU2FmYXJpLzUzNy4zNicsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzc3LjAuMzg2NS45MCBTYWZhcmkvNTM3LjM2JywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNzkuMC4zOTQ1Ljc5IFNhZmFyaS81MzcuMzYnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS84My4wLjQxMDMuOTcgU2FmYXJpLzUzNy4zNicsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NDsgcnY6NjYuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC82Ni4wJywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0OyBydjo2Ny4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94LzY3LjAnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDYuMzsgV2luNjQ7IHg2NDsgcnY6NzMuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC83My4wJywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0OyBydjo3My4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94LzczLjAnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQ7IHJ2OjcxLjApIEdlY2tvLzIwMTAwMTAxIEZpcmVmb3gvNzEuMCcsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NDsgcnY6NzUuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC83NS4wJywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0OyBydjo3Mi4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94LzcyLjAnLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQ7IHJ2Ojc2LjApIEdlY2tvLzIwMTAwMTAxIEZpcmVmb3gvNzYuMCcsCiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NDsgcnY6NzQuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC83NC4wJywKICdNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0OyBydjo3Ny4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94Lzc3LjAnLAogJ01vemlsbGEvNS4wIChjb21wYXRpYmxlOyBNU0lFIDEwLjA7IFdpbmRvd3MgTlQgNi4xOyBUcmlkZW50LzYuMCknLAogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdPVzY0OyBUcmlkZW50LzcuMDsgLk5FVDQuMEM7IC5ORVQ0LjBFOyAuTkVUIENMUiAyLjAuNTA3Mjc7IC5ORVQgQ0xSIDMuMC4zMDcyOTsgLk5FVCBDTFIgMy41LjMwNzI5OyBydjoxMS4wKSBsaWtlIEdlY2tvJywKICdNb3ppbGxhLzUuMCAoTWFjaW50b3NoOyBJbnRlbCBNYWMgT1MgWCAxMF8xMF8xKSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMzkuMC4yMTcxLjk1IFNhZmFyaS81MzcuMzYnXQp0cnk6Cglkb21haW4gPSBvcGVuKCJkb21haW4udHh0IiwiciIpLnJlYWQoKS5zcGxpdGxpbmVzKCkKZXhjZXB0OgoJZG9tYWluID0gWyJhYyIsImFkIiwiYWUiLCJhZiIsImFnIiwiYWkiLCJhbCIsCiJhbSIsImFuIiwiYW8iLCJhcSIsImFyIiwiYXMiLCJhdCIsImF1IiwiYXciLCJheCIsImF6IiwiYmEiLCJiYiIsImNvbSIKImJkIiwiYmUiLCJiZiIsImJnIiwiYmgiLCJiaSIsImJqIiwiYm0iLCJibiIsImJvIiwKImJyIiwiYnMiLCJidCIsImJ2IiwiYnciLCJieSIsImJ6IiwiY2EiLCJjYyIsImNkIiwKImNmIiwiY2ciLCJjaCIsImNpIiwiY2siLCJjbCIsImNtIiwiY24iLCJjbyIsImNyIiwKImN1IiwiY3YiLCJjeCIsImN5IiwiY3oiLCJkZSIsImRqIiwiZGsiLCJkbSIsImRvIiwKImR6IiwiZWMiLCJlZSIsImVnIiwiZWgiLCJlciIsImVzIiwiZXQiLCJldSIsImZpIiwKImZqIiwiZmsiLCJmbSIsImZvIiwiZnIiLCJnYSIsImdiIiwiZ2QiLCJnZSIsImdmIiwKImdnIiwiZ2giLCJnaSIsImdsIiwiZ20iLCJnbiIsImdwIiwiZ3EiLCJnciIsImdzIiwKImd0IiwiZ3UiLCJndyIsImd5IiwiaGsiLCJobSIsImhuIiwiaHIiLCJodCIsImh1IiwKImlkIiwiaWUiLCJpbCIsImltIiwiaW4iLCJpbyIsImlxIiwiaXMiLCJpdCIsCiJqZSIsImptIiwiam8iLCJqcCIsImtlIiwia2ciLCJraCIsImtpIiwia20iLCJrbiIsCiJrcCIsImtyIiwia3ciLCJreSIsImt6IiwibGEiLCJsYiIsImxjIiwibGkiLCJsayIsCiJsciIsImxzIiwibHQiLCJsdSIsImx2IiwibHkiLCJtYSIsIm1jIiwibWQiLCJtZSIsCiJtZyIsIm1oIiwibWsiLCJtbCIsIm1tIiwibW4iLCJtbyIsIm1wIiwibXEiLCJtciIsCiJtcyIsIm10IiwibXUiLCJtdiIsIm13IiwibXgiLCJteSIsIm16IiwibmEiLCJuYyIsCiJuZSIsIm5mIiwibmciLCJuaSIsIm5sIiwibm8iLCJucCIsIm5yIiwibnUiLCJueiIsCiJvbSIsInBhIiwicGUiLCJwZiIsInBnIiwicGgiLCJwayIsInBsIiwicG0iLCJwbiIsCiJwciIsInBzIiwicHQiLCJwdyIsInB5IiwicWEiLCJyZSIsInJvIiwicnMiLCJydSIsCiJydyIsInNhIiwic2IiLCJzYyIsInNkIiwic2UiLCJzZyIsInNoIiwic2kiLCJzaiIsCiJzayIsInNsIiwic20iLCJzbiIsInNvIiwic3IiLCJzdCIsInN1Iiwic3YiLCJzeSIsCiJzeiIsInRjIiwidGQiLCJ0ZiIsInRnIiwidGgiLCJ0aiIsInRrIiwidGwiLCJ0bSIsCiJ0biIsInRvIiwidHAiLCJ0ciIsInR0IiwidHYiLCJ0dyIsInR6IiwidWEiLCJ1ZyIsCiJ1ayIsInVtIiwidXMiLCJ1eSIsInV6IiwidmEiLCJ2YyIsInZlIiwidmciLCJ2aSIsCiJ2biIsInZ1Iiwid2YiLCJ3cyIsInllIiwieXQiLCJ6YSIsInptIiwienciLCJjb20iLAoibmV0Iiwib3JnIiwiYml6IiwiZ292IiwibWlsIiwiZWR1IiwiaW5mbyIsImludCIsInRlbCIsCiJuYW1lIiwiYWVybyIsImFzaWEiLCJjYXQiLCJjb29wIiwiam9icyIsIm1vYmkiLCJtdXNldW0iLAoicHJvIiwidHJhdmVsIl0KZGVmIHJleih1cmwsZXhwbG9pdCxuKToKCWlmICJ8IiBpbiBleHBsb2l0OgoJCWFyciA9IGV4cGxvaXQuc3BsaXQoInwiKQoJCWlmIG4gPT0gIjEiOgoJCQlwcmludCh3KyIgWyIrZysiKyIrdysiXSAiK2crYXJyWzBdKyI6ICIrdyt1cmwreSsiIHwgIithcnJbMV0uc3RyaXAoKSsiIHwgIithcnJbMl0uc3RyaXAoKStnKyIgW1lFU10iKQoJCWVsc2U6CgkJCXByaW50KHcrIiBbIityKyIrIit3KyJdICIrcithcnJbMF0rIjogIit3K3VybCt5KyIgfCAiK2FyclsxXS5zdHJpcCgpKyIgfCAiK2FyclsyXS5zdHJpcCgpK3IrIiBbTk9dIikKCWVsc2U6CgkJaWYgbiA9PSAiMSI6CgkJCXByaW50KHcrIiBbIitnKyIrIit3KyJdICIrZytleHBsb2l0KyI6ICIrdyt1cmwrZysiIFtZRVNdIikKCQllbHNlOgoJCQlwcmludCh3KyIgWyIrcisiKyIrdysiXSAiK3IrZXhwbG9pdCsiOiAiK3crdXJsK3IrIiBbTk9dIikKZGVmIFNwZWVkWChjaGVjayxsaXN0LHRoKToKCWlmIHh4eCA9PSBUcnVlOgoJCXRyeToKCQkJd2l0aCBjb25jdXJyZW50LmZ1dHVyZXMuVGhyZWFkUG9vbEV4ZWN1dG9yKGludCh0aCkpIGFzIGV4ZWN1dG9yOgoJCQkJZXhlY3V0b3IubWFwKGNoZWNrLGxpc3QpCgkJZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgoJCQlwcmludChlKQoJZWxzZToKCQlwb29sID0gVGhyZWFkUG9vbChpbnQodGgpKQoJCXBvb2wubWFwKGNoZWNrLGxpc3QpCgkJcG9vbC5jbG9zZSgpCgkJcG9vbC5qb2luKCkKZGVmIHNhdmVkKHgseSk6CglpID0geAoJaSA9IGkucmVwbGFjZSgiaHR0cDovLyIsIiIpCglpID0gaS5yZXBsYWNlKCJodHRwczovLyIsIiIpCglpID0gaS5yZXBsYWNlKCJ3d3cuIiwiIikKCWkgPSBpLnNwbGl0KCIvIikKCWkgPSBpWzBdCgl0cnk6CgkJbSA9IG9wZW4oeSwiciIpLnJlYWQoKQoJZXhjZXB0OgoJCW9wZW4oeSwidyIpCgkJbSA9IG9wZW4oeSwiciIpLnJlYWQoKQoJaWYgaSBpbiBtOgoJCWlmICIuIiBpbiBpOgoJCQlyZXooeCwiQWRkZWQiLCIxaCIpCgkJcGFzcwoJZWxzZToKCQlpZiAiLiIgaW4geDoKCQkJcmV6KHgsIkFkZGVkIiwiMSIpCgkJCW9wZW4oeSwiYSIpLndyaXRlKHgrIlxuIikKZGVmIGNoZWNrKHVybCk6CglwZGYgPSAiLnBkZiIKCXN0cmluZyA9ICIuIiBpbiB1cmwKCXRyeToKCQlmaWxlID0gb3BlbihmaWxlbmFtZSwiciIpLnJlYWQoKQoJZXhjZXB0OgoJCW9wZW4oZmlsZW5hbWUsInciKQoJCWZpbGUgPSBvcGVuKGZpbGVuYW1lLCJyIikucmVhZCgpCglpZiB1cmwgaW4gZmlsZSBvciBwZGYgaW4gdXJsIG9yIHN0cmluZyA9PSBGYWxzZToKCQlpZiAiLiIgaW4gdXJsOgoJCQlyZXoodXJsLCJBZGRlZCIsIjQxIikKCWVsc2U6CgkJZmlsZSA9IG9wZW4oZmlsZW5hbWUsImEiKQoJCWZpbGUud3JpdGUodXJsKyJcbiIpCgkJZmlsZS5jbG9zZSgpCgkJcmV6KHVybCwiQWRkZWQiLCIxIikKZGVmIGlwZG9ya2VyKGRvcmspOgoJaGVhZGVycyA9IHsndXNlci1hZ2VudCc6IHJhbmRvbS5jaG9pY2UodXNlcl9hZ2VudF9saXN0KStzdHIocmFuZG9tLmNob2ljZShyYW5nZSgxMDAwKSkpfQoJb2trayA9IGRvcmsKCWZpcnN0ID0gMAoJdHJ5OgoJCWZvciBpIGluIHJhbmdlKGludChwYWdlMikpOgoJCQlmaXJzdCA9IGZpcnN0KzUwCgkJCXVybCA9ICJodHRwOi8vd3d3LmJpbmcuY29tL3NlYXJjaD9xPWlwJTNBJTIyIitva2trKyIlMjImY291bnQ9MTAwMCZmaXJzdD0iK3N0cihmaXJzdCkKCQkJcmVzdWx0ID0gcmVxdWVzdHMuZ2V0KHVybCxoZWFkZXJzPWhlYWRlcnMsdGltZW91dD01MCkKCQkJcmVzdWx0ID0gcmVzdWx0LmNvbnRlbnQuZGVjb2RlKCd1dGYtOCcpCgkJCXBhdGVybiA9IHInPGEgaHJlZj0iKC4qPykiJwoJCQlvayA9IHJlLmZpbmRhbGwocGF0ZXJuLHJlc3VsdCkKCQkJZm9yIGkgaW4gb2s6CgkJCQlpID0gaS5yZXBsYWNlKCI8c3Ryb25nPiIsIiIpCgkJCQlpID0gaS5yZXBsYWNlKCI8L3N0cm9uZz4iLCIiKQoJCQkJaSA9IGkrIi8iCgkJCQlpZiAiaHR0cDovLyIgaW4gaToKCQkJCQlpID0gImh0dHA6Ly8iK3JlLmZpbmRhbGwoImh0dHA6Ly8oLio/KS8iLGkpWzBdCgkJCQllbGlmICJodHRwczovLyIgaW4gaToKCQkJCQlpID0gImh0dHBzOi8vIityZS5maW5kYWxsKCJodHRwczovLyguKj8pLyIsaSlbMF0KCQkJCWVsc2U6CgkJCQkJaSA9ICJodHRwOi8vIityZS5maW5kYWxsKCJodHRwOi8vKC4qPykvIiwnaHR0cDovLycraSlbMF0KCQkJCWlmICJnby5taWNyb3NvZnQuY29tIiBpbiBpIG9yICJqYXZhc2NyaXB0OiIgaW4gaSBvciBpID09ICJcbiI6CgkJCQkJcGFzcwoJCQkJZWxzZToKCQkJCQlpZiAiLiIgaW4gaToKCQkJCQkJY2hlY2soaSkJCQkJCQkKCWV4Y2VwdCBFeGNlcHRpb24gYXMgZToKCQlwcmludChlKQoJCWlwZG9ya2VyKGRvcmspCmRlZiBpcCh4KToKCXRyeToKCQlzb2NrZXQuc2V0ZGVmYXVsdHRpbWVvdXQoMTApCgkJdXJsID0gc29ja2V0LmdldGhvc3RieW5hbWUoeCkKCWV4Y2VwdCBFeGNlcHRpb24gYXMgZToKCQlyZXooeCwiTElWRUQiLCJuIikKCQlyZXR1cm4gNQoJdHJ5OgoJCWlmIFJJUE9OID09IEZhbHNlOgoJCQlzYXZlZmlsZSA9IGZpbGVuYW1lCgkJZWxzZToKCQkJc2F2ZWZpbGUgPSAiYWxsLWlwLnR4dCIKCQlmaWxlID0gb3BlbihzYXZlZmlsZSwiciIpLnJlYWQoKQoJZXhjZXB0OgoJCW9wZW4oc2F2ZWZpbGUsInciKQoJCWZpbGUgPSBvcGVuKHNhdmVmaWxlLCJyIikucmVhZCgpCglpZiB1cmwgaW4gZmlsZToKCQlwYXNzCgllbHNlOgoJCWZpbGUgPSBvcGVuKHNhdmVmaWxlLCJhIikKCQlmaWxlLndyaXRlKHVybCsiXG4iKQoJCWZpbGUuY2xvc2UoKQoJCXJleih1cmwsIkxJVkVEIiwiMSIpCgkJaWYgUklQT04gPT0gVHJ1ZToKCQkJaXBkb3JrZXIodXJsKQpkZWYgbGl2ZWlwcyhpcCk6Cgl0cnk6CgkJcyA9IHNvY2tldC5zb2NrZXQoc29ja2V0LkFGX0lORVQsIHNvY2tldC5TT0NLX1NUUkVBTSkKCQlzb2NrZXQuc2V0ZGVmYXVsdHRpbWVvdXQoNSkKCQltID0gcy5jb25uZWN0X2V4KChpcCw4MCkpCgkJaWYgc3RyKG0pID09ICIwIjoKCQkJZmlsZSA9IG9wZW4oZmlsZW5hbWUsImEiKQoJCQlmaWxlLndyaXRlKGlwKyJcbiIpCgkJCWZpbGUuY2xvc2UoKQoJCQlyZXooaXAsIkxJVkVEIiwiMSIpCgkJZWxzZToKCQkJcmV6KGlwLCJMSVZFRCIsImcxIikKCWV4Y2VwdCBFeGNlcHRpb24gYXMgZToKCQlyZXooaXAsIkxJVkVEIiwibiIpCgkJcmV0dXJuIDUKZGVmIGJpbmcoZG9yayk6CgloZWFkZXJzID0geyd1c2VyLWFnZW50JzogcmFuZG9tLmNob2ljZSh1c2VyX2FnZW50X2xpc3QpK3N0cihyYW5kb20uY2hvaWNlKHJhbmdlKDEwMDApKSl9Cglmb3IgZG9tIGluIGRvbWFpbjoKCQlva2trID0gZG9yay5zdHJpcCgpKycgIicrZG9tCgkJZmlyc3QgPSAwCgkJdHJ5OgoJCQlmb3IgaSBpbiByYW5nZShpbnQocGFnZTEpKToKCQkJCWZpcnN0ID0gZmlyc3QrNTAKCQkJCXBhcmFtcyA9IHsncSc6IG9ra2ssICdjb3VudCc6ICcxMDAwJywnZmlyc3QnOmZpcnN0fQoJCQkJdXJsID0gImh0dHA6Ly93d3cuYmluZy5jb20vc2VhcmNoIgoJCQkJcmVzdWx0ID0gcmVxdWVzdHMuZ2V0KHVybCxwYXJhbXM9cGFyYW1zLGhlYWRlcnM9aGVhZGVycyx0aW1lb3V0PTEwKQoJCQkJcmVzdWx0ID0gcmVzdWx0LmNvbnRlbnQuZGVjb2RlKCd1dGYtOCcpCgkJCQlwYXRlcm4gPSByJzxhIGhyZWY9IiguKj8pIicKCQkJCW9rID0gcmUuZmluZGFsbChwYXRlcm4scmVzdWx0KQoJCQkJZm9yIGkgaW4gb2s6CgkJCQkJaWYgImdvLm1pY3Jvc29mdC5jb20iIGluIGkgb3IgImphdmFzY3JpcHQ6IiBpbiBpIG9yIGkgPT0gIlxuIjoKCQkJCQkJcGFzcwoJCQkJCWVsc2U6CgkJCQkJCWlmIFJJUE9OID09IFRydWU6CgkJCQkJCQlpID0gaS5yZXBsYWNlKCI8c3Ryb25nPiIsIiIpCgkJCQkJCQlpID0gaS5yZXBsYWNlKCI8L3N0cm9uZz4iLCIiKQoJCQkJCQkJaSA9IGkrIi8iCgkJCQkJCQlpZiAiaHR0cDovLyIgaW4gaToKCQkJCQkJCQlpID0gImh0dHA6Ly8iK3JlLmZpbmRhbGwoImh0dHA6Ly8oLio/KS8iLGkpWzBdCgkJCQkJCQllbGlmICJodHRwczovLyIgaW4gaToKCQkJCQkJCQlpID0gImh0dHBzOi8vIityZS5maW5kYWxsKCJodHRwczovLyguKj8pLyIsaSlbMF0KCQkJCQkJCWVsc2U6CgkJCQkJCQkJaSA9ICJodHRwOi8vIityZS5maW5kYWxsKCJodHRwOi8vKC4qPykvIiwnaHR0cDovLycraSlbMF0KCQkJCQkJCWlmICJnby5taWNyb3NvZnQuY29tIiBpbiBpIG9yICJqYXZhc2NyaXB0OiIgaW4gaSBvciBpID09ICJcbiI6CgkJCQkJCQkJcGFzcwoJCQkJCQkJZWxzZToKCQkJCQkJCQlpZiAiLiIgaW4gaToKCQkJCQkJCQkJY2hlY2soaSkKCQkJCQkJCQkJaXAoaS5yZXBsYWNlKCJodHRwOi8vIiwiIikucmVwbGFjZSgiaHR0cHM6Ly8iLCIiKS5zcGxpdCgiLyIpWzBdKQoJCQkJCQllbHNlOgoJCQkJCQkJc2F2ZWQoaSxmaWxlbmFtZSkKCQlleGNlcHQgRXhjZXB0aW9uIGFzIGU6CgkJCXByaW50KGUpCgkJCWJpbmcoZG9yaykKZGVmIElwUmFuZ2VyKGlweCk6CglzdG9yZSA9IGlweC5zcGxpdCgiLiIpWzBdKyIuIitpcHguc3BsaXQoIi4iKVsxXQoJZm9yIGkgaW4gcmFuZ2UoMSwyNTYpOgoJCWZvciB5IGluIHJhbmdlKDEsMjU2KToKCQkJbGl2ZWlwcyhzdHIoc3RvcmUrIi4iK3N0cihpKSsiLiIrc3RyKHkpKSkKdHJ5OgoJY21kID0gUmV0KGcrIiBbe31yb290e31Ae31Nci4gQkRLUjI4e306e31+e31de30jIHt9Ii5mb3JtYXQoZyxyLHksZyxjLGcsbSxyKSkKZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgoJcHJpbnQoZSkKCWV4aXQoKQppZiBjbWQgPT0gIjEiOgoJUklQT04gPSBUcnVlCgl0cnk6CgkJY2xzKCkKCQlwcmludChyK2xvZ28rIiIiXG57fQlBdXRob3I6e30gTXIuIEJES1IyOFxuCXt9TmFtZToge31CaW5nIFdlYmxpc3QgR3JhYmJlclxuIiIiLmZvcm1hdCh5LGMseSxjKSkKCQlkb3JrcyA9IFJldChnKyIgRG9ya0xpc3QiK3crIjoiK2MrIn4iK20rIiMgIityKQoJCXBhZ2UxID0gUmV0KGcrIiBQYWdlIERvcmsiK3crIjoiK2MrIn4iK20rIiMgIityKQoJCXBhZ2UyID0gUmV0KGcrIiBQYWdlIFJldmVyc2lwIit3KyI6IitjKyJ+IittKyIjICIrcikKCQlmaWxlbmFtZSA9IFJldChnKyIgU2F2ZSBGaWxlIit3KyI6IitjKyJ+IittKyIjICIrcikKCQl0aCA9IFJldChnKyIgVGhyZWFkcyIrdysiOiIrYysifiIrbSsiIyAiK3IpCgkJZG9yayA9IG9wZW4oZG9ya3MsInIiKS5yZWFkKCkuc3BsaXRsaW5lcygpCgkJY2xzKCkKCQlTcGVlZFgoYmluZyxkb3JrLHRoKQoJZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgoJCXByaW50KGUpCgkJZXhpdCgpCmlmIGNtZCA9PSAiMiI6Cgl0cnk6CgkJY2xzKCkKCQlwcmludChyK2xvZ28rIiIiXG57fQlBdXRob3I6e30gTXIuIEJES1IyOFxuCXt9TmFtZToge31CaW5nIFVubGltaXRlZCBSZXZlcnNpcFxuIiIiLmZvcm1hdCh5LGMseSxjKSkKCQlkb3JrcyA9IFJldChnKyIgSXBMaXN0Iit3KyI6IitjKyJ+IittKyIjICIrcikKCQlwYWdlMiA9IFJldChnKyIgUGFnZSBSZXZlcnNpcCIrdysiOiIrYysifiIrbSsiIyAiK3IpCgkJZmlsZW5hbWUgPSBSZXQoZysiIFNhdmUgRmlsZSIrdysiOiIrYysifiIrbSsiIyAiK3IpCgkJdGggPSBSZXQoZysiIFRocmVhZHMiK3crIjoiK2MrIn4iK20rIiMgIityKQoJCWRvcmsgPSBvcGVuKGRvcmtzLCJyIikucmVhZCgpLnNwbGl0bGluZXMoKQoJCWNscygpCgkJU3BlZWRYKGlwZG9ya2VyLGRvcmssdGgpCglleGNlcHQgRXhjZXB0aW9uIGFzIGU6CgkJcHJpbnQoZSkKCQlleGl0KCkKaWYgY21kID09ICIzIjoKCXRyeToKCQljbHMoKQoJCXByaW50KHIrbG9nbysiIiJcbnt9CUF1dGhvcjp7fSBNci4gQkRLUjI4XG4Je31OYW1lOiB7fUdyYWIgV2VibGlzdCBUbyBJcFxuIiIiLmZvcm1hdCh5LGMseSxjKSkKCQlkb3JrcyA9IFJldChnKyIgRW50ZXJMaXN0Iit3KyI6IitjKyJ+IittKyIjICIrcikKCQlmaWxlbmFtZSA9IFJldChnKyIgU2F2ZSBGaWxlIit3KyI6IitjKyJ+IittKyIjICIrcikKCQl0aCA9IFJldChnKyIgVGhyZWFkcyIrdysiOiIrYysifiIrbSsiIyAiK3IpCgkJZG9yayA9IG9wZW4oZG9ya3MsInIiKS5yZWFkKCkuc3BsaXRsaW5lcygpCgkJY2xzKCkKCQlTcGVlZFgoaXAsZG9yayx0aCkJCQoJZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgoJCXByaW50KGUpCgkJZXhpdCgpCmlmIGNtZCA9PSAiNCI6Cgl0cnk6CgkJY2xzKCkKCQlwcmludChyK2xvZ28rIiIiXG57fQlBdXRob3I6e30gTXIuIEJES1IyOFxuCXt9TmFtZToge31CaW5nIEJhc2ljIERvcmtlclxuIiIiLmZvcm1hdCh5LGMseSxjKSkKCQlkb3JrcyA9IFJldChnKyIgRG9ya0xpc3QiK3crIjoiK2MrIn4iK20rIiMgIityKQoJCXBhZ2UxID0gUmV0KGcrIiBQYWdlIERvcmsiK3crIjoiK2MrIn4iK20rIiMgIityKQoJCWZpbGVuYW1lID0gUmV0KGcrIiBTYXZlIEZpbGUiK3crIjoiK2MrIn4iK20rIiMgIityKQoJCXRoID0gUmV0KGcrIiBUaHJlYWRzIit3KyI6IitjKyJ+IittKyIjICIrcikKCQlkb3JrID0gb3Blbihkb3JrcywiciIpLnJlYWQoKS5zcGxpdGxpbmVzKCkKCQljbHMoKQoJCVNwZWVkWChiaW5nLGRvcmssdGgpCglleGNlcHQgRXhjZXB0aW9uIGFzIGU6CgkJcHJpbnQoZSkKCQlleGl0KCkKaWYgY21kID09ICI1IjoKCXRyeToKCQljbHMoKQoJCXByaW50KHIrbG9nbysiIiJcbnt9CUF1dGhvcjp7fSBNci4gQkRLUjI4XG4Je31OYW1lOiB7fUlwIFJhbmdlciArIExpdmUgQ2hlY2tlclxuIiIiLmZvcm1hdCh5LGMseSxjKSkKCQlkb3JrcyA9IFJldChnKyIgSXBMaXN0Iit3KyI6IitjKyJ+IittKyIjICIrcikKCQlmaWxlbmFtZSA9IFJldChnKyIgU2F2ZSBGaWxlIit3KyI6IitjKyJ+IittKyIjICIrcikKCQl0aCA9IFJldChnKyIgVGhyZWFkcyIrdysiOiIrYysifiIrbSsiIyAiK3IpCgkJZG9yayA9IG9wZW4oZG9ya3MsInIiKS5yZWFkKCkuc3BsaXRsaW5lcygpCgkJY2xzKCkKCQlTcGVlZFgoSXBSYW5nZXIsZG9yayx0aCkKCWV4Y2VwdCBFeGNlcHRpb24gYXMgZToKCQlwcmludChlKQoJCWV4aXQoKQplbHNlOgoJY2xzKCkKCXByaW50KGcrIiBbK10gVG9vbCBDbG9zZWQgU3VjY2Vzc2Z1bGx5IFsrXSIp")
+import requests,re,os,random
+import socket
+def cls():
+	os.system(['clear', 'cls'][(os.name == 'nt')])
+cls()
+try:
+	import concurrent.futures
+	xxx = True
+except:
+	from multiprocessing.pool import ThreadPool
+	xxx = False
+red = '\x1b[31m'
+r = '\x1b[31m'
+g = '\x1b[32m'
+y = '\x1b[33m'
+b = '\x1b[34m'
+m = '\x1b[35m'
+c = '\x1b[36m'
+w = '\x1b[37m'
+RIPON = False
+def Ret(x):
+	try:
+		return raw_input(x)
+	except:
+		return input(x)
+logo = """ 
+  __  __        ____  _____  _  _______  ___   ___  
+ |  \/  |      |  _ \|  __ \| |/ /  __ \|__ \ / _ \ 
+ | \  / |_ __  | |_) | |  | | ' /| |__) |  ) | (_) |
+ | |\/| | '__| |  _ <| |  | |  < |  _  /  / / > _ < 
+ | |  | | |_   | |_) | |__| | . \| | \ \ / /_| (_) |
+ |_|  |_|_(_)  |____/|_____/|_|\_\_|  \_\____|\___/ 
+                                                    
+                                                                                                             
+ """
+print(r+logo+"""\n    {}I Don't Aspect Any Responsibility For Bad Ussage!{}\n\n Author: {}The Mr. BDKR28{}\n Name: {}The Bing BOT{}\n Application: {}Python 2.7 & 3.9 Supported{}\n Chose a Tool:{}\n  1. Bing Weblist Grabber Tool\n  2. Bing Reversip Tool (Unlimited)\n  3. Live IP Check + IP From Domain\n  4. Bing Normal Dorking\n  5. IP Ranger + Ip Live
+ """.format(g,y,c,y,c,y,c,m,w))
+user_agent_list = [
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+ 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0',
+ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:79.0) Gecko/20100101 Firefox/79.0',
+ 'Mozilla/5.0 (X11; Linux i686; rv:79.0) Gecko/20100101 Firefox/79.0',
+ 'Mozilla/5.0 (Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0',
+ 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:79.0) Gecko/20100101 Firefox/79.0',
+ 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0',
+ 'Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 OPR/70.0.3728.95',
+ 'Mozilla/5.0 (Windows NT 10.0; WOW64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 OPR/70.0.3728.95',
+ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 OPR/70.0.3728.95',
+ 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 OPR/70.0.3728.95',
+ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0',
+ 'Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0',
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0',
+ 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)',
+ 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; rv:11.0) like Gecko',
+ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36']
+try:
+	domain = open("domain.txt","r").read().splitlines()
+except:
+	domain = ["ac","ad","ae","af","ag","ai","al",
+"am","an","ao","aq","ar","as","at","au","aw","ax","az","ba","bb","com"
+"bd","be","bf","bg","bh","bi","bj","bm","bn","bo",
+"br","bs","bt","bv","bw","by","bz","ca","cc","cd",
+"cf","cg","ch","ci","ck","cl","cm","cn","co","cr",
+"cu","cv","cx","cy","cz","de","dj","dk","dm","do",
+"dz","ec","ee","eg","eh","er","es","et","eu","fi",
+"fj","fk","fm","fo","fr","ga","gb","gd","ge","gf",
+"gg","gh","gi","gl","gm","gn","gp","gq","gr","gs",
+"gt","gu","gw","gy","hk","hm","hn","hr","ht","hu",
+"id","ie","il","im","in","io","iq","is","it",
+"je","jm","jo","jp","ke","kg","kh","ki","km","kn",
+"kp","kr","kw","ky","kz","la","lb","lc","li","lk",
+"lr","ls","lt","lu","lv","ly","ma","mc","md","me",
+"mg","mh","mk","ml","mm","mn","mo","mp","mq","mr",
+"ms","mt","mu","mv","mw","mx","my","mz","na","nc",
+"ne","nf","ng","ni","nl","no","np","nr","nu","nz",
+"om","pa","pe","pf","pg","ph","pk","pl","pm","pn",
+"pr","ps","pt","pw","py","qa","re","ro","rs","ru",
+"rw","sa","sb","sc","sd","se","sg","sh","si","sj",
+"sk","sl","sm","sn","so","sr","st","su","sv","sy",
+"sz","tc","td","tf","tg","th","tj","tk","tl","tm",
+"tn","to","tp","tr","tt","tv","tw","tz","ua","ug",
+"uk","um","us","uy","uz","va","vc","ve","vg","vi",
+"vn","vu","wf","ws","ye","yt","za","zm","zw","com",
+"net","org","biz","gov","mil","edu","info","int","tel",
+"name","aero","asia","cat","coop","jobs","mobi","museum",
+"pro","travel"]
+def rez(url,exploit,n):
+	if "|" in exploit:
+		arr = exploit.split("|")
+		if n == "1":
+			print(w+" ["+g+"+"+w+"] "+g+arr[0]+": "+w+url+y+" | "+arr[1].strip()+" | "+arr[2].strip()+g+" [YES]")
+		else:
+			print(w+" ["+r+"+"+w+"] "+r+arr[0]+": "+w+url+y+" | "+arr[1].strip()+" | "+arr[2].strip()+r+" [NO]")
+	else:
+		if n == "1":
+			print(w+" ["+g+"+"+w+"] "+g+exploit+": "+w+url+g+" [YES]")
+		else:
+			print(w+" ["+r+"+"+w+"] "+r+exploit+": "+w+url+r+" [NO]")
+def SpeedX(check,list,th):
+	if xxx == True:
+		try:
+			with concurrent.futures.ThreadPoolExecutor(int(th)) as executor:
+				executor.map(check,list)
+		except Exception as e:
+			print(e)
+	else:
+		pool = ThreadPool(int(th))
+		pool.map(check,list)
+		pool.close()
+		pool.join()
+def saved(x,y):
+	i = x
+	i = i.replace("http://","")
+	i = i.replace("https://","")
+	i = i.replace("www.","")
+	i = i.split("/")
+	i = i[0]
+	try:
+		m = open(y,"r").read()
+	except:
+		open(y,"w")
+		m = open(y,"r").read()
+	if i in m:
+		if "." in i:
+			rez(x,"Added","1h")
+		pass
+	else:
+		if "." in x:
+			rez(x,"Added","1")
+			open(y,"a").write(x+"\n")
+def check(url):
+	pdf = ".pdf"
+	string = "." in url
+	try:
+		file = open(filename,"r").read()
+	except:
+		open(filename,"w")
+		file = open(filename,"r").read()
+	if url in file or pdf in url or string == False:
+		if "." in url:
+			rez(url,"Added","41")
+	else:
+		file = open(filename,"a")
+		file.write(url+"\n")
+		file.close()
+		rez(url,"Added","1")
+def ipdorker(dork):
+	headers = {'user-agent': random.choice(user_agent_list)+str(random.choice(range(1000)))}
+	okkk = dork
+	first = 0
+	try:
+		for i in range(int(page2)):
+			first = first+50
+			url = "http://www.bing.com/search?q=ip%3A%22"+okkk+"%22&count=1000&first="+str(first)
+			result = requests.get(url,headers=headers,timeout=50)
+			result = result.content.decode('utf-8')
+			patern = r'<a href="(.*?)"'
+			ok = re.findall(patern,result)
+			for i in ok:
+				i = i.replace("<strong>","")
+				i = i.replace("</strong>","")
+				i = i+"/"
+				if "http://" in i:
+					i = "http://"+re.findall("http://(.*?)/",i)[0]
+				elif "https://" in i:
+					i = "https://"+re.findall("https://(.*?)/",i)[0]
+				else:
+					i = "http://"+re.findall("http://(.*?)/",'http://'+i)[0]
+				if "go.microsoft.com" in i or "javascript:" in i or i == "\n":
+					pass
+				else:
+					if "." in i:
+						check(i)						
+	except Exception as e:
+		print(e)
+		ipdorker(dork)
+def ip(x):
+	try:
+		socket.setdefaulttimeout(10)
+		url = socket.gethostbyname(x)
+	except Exception as e:
+		rez(x,"LIVED","n")
+		return 5
+	try:
+		if RIPON == False:
+			savefile = filename
+		else:
+			savefile = "all-ip.txt"
+		file = open(savefile,"r").read()
+	except:
+		open(savefile,"w")
+		file = open(savefile,"r").read()
+	if url in file:
+		pass
+	else:
+		file = open(savefile,"a")
+		file.write(url+"\n")
+		file.close()
+		rez(url,"LIVED","1")
+		if RIPON == True:
+			ipdorker(url)
+def liveips(ip):
+	try:
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		socket.setdefaulttimeout(5)
+		m = s.connect_ex((ip,80))
+		if str(m) == "0":
+			file = open(filename,"a")
+			file.write(ip+"\n")
+			file.close()
+			rez(ip,"LIVED","1")
+		else:
+			rez(ip,"LIVED","g1")
+	except Exception as e:
+		rez(ip,"LIVED","n")
+		return 5
+def bing(dork):
+	headers = {'user-agent': random.choice(user_agent_list)+str(random.choice(range(1000)))}
+	for dom in domain:
+		okkk = dork.strip()+' "'+dom
+		first = 0
+		try:
+			for i in range(int(page1)):
+				first = first+50
+				params = {'q': okkk, 'count': '1000','first':first}
+				url = "http://www.bing.com/search"
+				result = requests.get(url,params=params,headers=headers,timeout=10)
+				result = result.content.decode('utf-8')
+				patern = r'<a href="(.*?)"'
+				ok = re.findall(patern,result)
+				for i in ok:
+					if "go.microsoft.com" in i or "javascript:" in i or i == "\n":
+						pass
+					else:
+						if RIPON == True:
+							i = i.replace("<strong>","")
+							i = i.replace("</strong>","")
+							i = i+"/"
+							if "http://" in i:
+								i = "http://"+re.findall("http://(.*?)/",i)[0]
+							elif "https://" in i:
+								i = "https://"+re.findall("https://(.*?)/",i)[0]
+							else:
+								i = "http://"+re.findall("http://(.*?)/",'http://'+i)[0]
+							if "go.microsoft.com" in i or "javascript:" in i or i == "\n":
+								pass
+							else:
+								if "." in i:
+									check(i)
+									ip(i.replace("http://","").replace("https://","").split("/")[0])
+						else:
+							saved(i,filename)
+		except Exception as e:
+			print(e)
+			bing(dork)
+def IpRanger(ipx):
+	store = ipx.split(".")[0]+"."+ipx.split(".")[1]
+	for i in range(1,256):
+		for y in range(1,256):
+			liveips(str(store+"."+str(i)+"."+str(y)))
+try:
+	cmd = Ret(g+" [{}root{}@{}Mr. BDKR28{}:{}~{}]{}# {}".format(g,r,y,g,c,g,m,r))
+except Exception as e:
+	print(e)
+	exit()
+if cmd == "1":
+	RIPON = True
+	try:
+		cls()
+		print(r+logo+"""\n{}	Author:{} Mr. BDKR28\n	{}Name: {}Bing Weblist Grabber\n""".format(y,c,y,c))
+		dorks = Ret(g+" DorkList"+w+":"+c+"~"+m+"# "+r)
+		page1 = Ret(g+" Page Dork"+w+":"+c+"~"+m+"# "+r)
+		page2 = Ret(g+" Page Reversip"+w+":"+c+"~"+m+"# "+r)
+		filename = Ret(g+" Save File"+w+":"+c+"~"+m+"# "+r)
+		th = Ret(g+" Threads"+w+":"+c+"~"+m+"# "+r)
+		dork = open(dorks,"r").read().splitlines()
+		cls()
+		SpeedX(bing,dork,th)
+	except Exception as e:
+		print(e)
+		exit()
+if cmd == "2":
+	try:
+		cls()
+		print(r+logo+"""\n{}	Author:{} Mr. BDKR28\n	{}Name: {}Bing Unlimited Reversip\n""".format(y,c,y,c))
+		dorks = Ret(g+" IpList"+w+":"+c+"~"+m+"# "+r)
+		page2 = Ret(g+" Page Reversip"+w+":"+c+"~"+m+"# "+r)
+		filename = Ret(g+" Save File"+w+":"+c+"~"+m+"# "+r)
+		th = Ret(g+" Threads"+w+":"+c+"~"+m+"# "+r)
+		dork = open(dorks,"r").read().splitlines()
+		cls()
+		SpeedX(ipdorker,dork,th)
+	except Exception as e:
+		print(e)
+		exit()
+if cmd == "3":
+	try:
+		cls()
+		print(r+logo+"""\n{}	Author:{} Mr. BDKR28\n	{}Name: {}Grab Weblist To Ip\n""".format(y,c,y,c))
+		dorks = Ret(g+" EnterList"+w+":"+c+"~"+m+"# "+r)
+		filename = Ret(g+" Save File"+w+":"+c+"~"+m+"# "+r)
+		th = Ret(g+" Threads"+w+":"+c+"~"+m+"# "+r)
+		dork = open(dorks,"r").read().splitlines()
+		cls()
+		SpeedX(ip,dork,th)		
+	except Exception as e:
+		print(e)
+		exit()
+if cmd == "4":
+	try:
+		cls()
+		print(r+logo+"""\n{}	Author:{} Mr. BDKR28\n	{}Name: {}Bing Basic Dorker\n""".format(y,c,y,c))
+		dorks = Ret(g+" DorkList"+w+":"+c+"~"+m+"# "+r)
+		page1 = Ret(g+" Page Dork"+w+":"+c+"~"+m+"# "+r)
+		filename = Ret(g+" Save File"+w+":"+c+"~"+m+"# "+r)
+		th = Ret(g+" Threads"+w+":"+c+"~"+m+"# "+r)
+		dork = open(dorks,"r").read().splitlines()
+		cls()
+		SpeedX(bing,dork,th)
+	except Exception as e:
+		print(e)
+		exit()
+if cmd == "5":
+	try:
+		cls()
+		print(r+logo+"""\n{}	Author:{} Mr. BDKR28\n	{}Name: {}Ip Ranger + Live Checker\n""".format(y,c,y,c))
+		dorks = Ret(g+" IpList"+w+":"+c+"~"+m+"# "+r)
+		filename = Ret(g+" Save File"+w+":"+c+"~"+m+"# "+r)
+		th = Ret(g+" Threads"+w+":"+c+"~"+m+"# "+r)
+		dork = open(dorks,"r").read().splitlines()
+		cls()
+		SpeedX(IpRanger,dork,th)
+	except Exception as e:
+		print(e)
+		exit()
+else:
+	cls()
+	print(g+" [+] Tool Closed Successfully [+]")
