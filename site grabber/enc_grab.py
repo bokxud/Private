@@ -130,7 +130,7 @@ def rez(url,exploit,n):
 		else:
 			print(w+" ["+r+"+"+w+"] "+r+exploit+": "+w+url+r+" [NO]")
 def SpeedX(check,list,th):
-	if xxx == True:
+	if x == True:
 		try:
 			with concurrent.futures.ThreadPoolExecutor(int(th)) as executor:
 				executor.map(check,list)
