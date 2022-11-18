@@ -1,1 +1,1 @@
-["ba","bb","com","bd","be","bf","bg","bh","bi","bj","bm","bn","bo","br","bs","bt","bv","bw","by","bz"]
+["ac.id","id","ac","go.id","sch.id","jp","th","gov","edu"]
