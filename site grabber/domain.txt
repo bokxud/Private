@@ -1,1 +1,1 @@
-["id","ac.id","ac","go.id","sch.id"]
+["id","ac.id","ac","go.id","sch.id","th","net","hu","jp","gov","edu","com"]
