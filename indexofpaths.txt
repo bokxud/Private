@@ -431,6 +431,8 @@ post/wp-json/
 posts/wp-json/
 public/
 public_html/
+public_html/acolher/
+public_html/adlokcreations/
 public/assets/file-uploader/server/php/
 public/assets/fileupload/
 public/assets/plugins/plupload/examples/
