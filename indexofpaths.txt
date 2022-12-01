@@ -264,6 +264,7 @@ gallery/
 graphql/
 home/
 html/
+htdocs/
 https:/
 https:/login.luszcz.de/
 img/
