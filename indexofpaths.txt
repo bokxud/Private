@@ -16,6 +16,7 @@ css/
 dev/
 img/
 new/
+html/
 old/
 pdf/
 php/
