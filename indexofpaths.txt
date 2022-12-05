@@ -27,6 +27,7 @@ tmb/
 tmp/
 web/
 www/
+www/public/
 .env/
 .tmb/
 2018/
