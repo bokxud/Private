@@ -180,6 +180,7 @@ wp-content/cgialfa/
 wp-content/plugins/
 wp-content/upgrade/
 wp-content/uploads/
+/wp-content/plugins/ioptimization
 wp-includes/blocks/
 wp-includes/images/
 admin/images/slider/
