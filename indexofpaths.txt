@@ -16,7 +16,6 @@ css/
 dev/
 img/
 new/
-html/
 old/
 pdf/
 php/
@@ -27,7 +26,6 @@ tmb/
 tmp/
 web/
 www/
-www/public/
 .env/
 .tmb/
 2018/
@@ -68,7 +66,6 @@ blocks/
 config/
 cpanel/
 forums/
-httpdocs/
 images/
 portal/
 status/
@@ -85,12 +82,6 @@ network/
 old/rss/
 oldsite/
 phpinfo/
-public_html/
-public_html/acolher/
-public_html/adlokcreations/
-public/_ignition/
-public/html/
-public/assets/
 plugins/
 uploads/
 wp-json/
@@ -112,7 +103,6 @@ alfacgiapi/
 aws/config/
 components/
 downloader/
-laravel/
 mysqladmin/
 phpmyadmin/
 plesk-stat/
@@ -180,7 +170,6 @@ wp-content/cgialfa/
 wp-content/plugins/
 wp-content/upgrade/
 wp-content/uploads/
-wp-content/plugins/ioptimization
 wp-includes/blocks/
 wp-includes/images/
 admin/images/slider/
