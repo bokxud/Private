@@ -16,6 +16,7 @@ wp-includes/block-patterns/
 wp-content/uploads/iva-bhp-tmp/
 .well-known/
 wp-includes/SimplePie/
+wp-content/plugins/wp-mail-smtp/vendor_prefixed/
 wp-content/uploads/
 wp-includes/js/
 wp-includes/fonts/
