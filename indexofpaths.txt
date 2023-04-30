@@ -190,6 +190,7 @@ wp-includes/rest-api/
 wp-includes/sitemaps/
 wp-content/alfacgiapi/
 wp-content/mu-plugins/
+wp-content/themes/pridmag/
 wp-includes/ALFA_DATA/
 wp-includes/PHPMailer/
 wp-includes/SimplePie/
