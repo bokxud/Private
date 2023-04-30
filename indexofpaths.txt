@@ -91,6 +91,8 @@ old-site/
 shop/rss/
 widwsisw/
 wp-admin/
+wp-admin/css/
+wp-admin/includes/
 ALFA_DATA/
 WordPress/
 admin/tmp/
@@ -140,6 +142,8 @@ rss/order/new/
 server-status/
 user/register/
 users/sign_in/
+wp-admin/
+wp-admin/js/
 wp-admin/meta/
 wp-admin/user/
 block-patterns/
@@ -157,6 +161,7 @@ wp-includes/css/
 articles/wp-json/
 wp-admin/cgialfa/
 wp-admin/network/
+wp-includes/sitemaps/
 wp-includes/Text/
 wp-includes/pomo/
 service/extdirect/
