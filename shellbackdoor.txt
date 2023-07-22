@@ -19,7 +19,7 @@ def finder(i):
                     #print(fw + "-|" + " Vuln > " + fg + url)
                     print('[Vuln check] ======>>> '+url)
                     # bot.sendMessage(user, url+"\n")
-                    with open("Shell.txt", "a") as file:
+                    with open("BDKR28_shell.txt", "a") as file:
                         file.write(url + "\n")
                         file.close()
                     SendMsg(url)
