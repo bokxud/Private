@@ -9,7 +9,10 @@ def finder(i):
         'wp-admin/dropdown.php', 'wp-content/themes/twenty/twenty.php', 'cjfuns.php', 'wp-admin/dropdown.php', 'wp-includes/rest-api/about.php',
         'radio.php', 'assets/img/kandidat/fget.php', 'wp-admin/css/colors/about.php', 'wp-admin/index.php', 'wp-includes/js/about.php','images/portfolio/modelos/about.php',
         'images/empresas/about.php','dropdown.php', 'repeater.php', 'ok.php', 'wso112233.php', 'ws.php', 'x.php', 'wp-content/plugins/ioptimization/IOptimize.php?rchk',
-	'wp-content/updates.php', 'wp-includes/js/tinymce/skins/lightgray/img/index.php?p=', 'shell.php', 'BDKR28.php']
+	'wp-content/updates.php', 'wp-includes/js/tinymce/skins/lightgray/img/index.php?p=', 'shell.php', 'BDKR28.php', '/.well-known/pki-validation/xmrlpc.php?p=', '/.well-known/acme-challenge/xmrlpc.php?p=', '/wp-admin/network/xmrlpc.php?p=', '/xmrlpc.php?p=',
+    '/cgi-bin/xmrlpc.php?p=', '/css/xmrlpc.php?p=', '/wp-admin/user/xmrlpc.php?p=', '/img/xmrlpc.php?p=', '/wp-admin/css/colors/coffee/xmrlpc.php?p=',
+    '/wp-admin/images/xmrlpc.php?p=', '/images/xmrlpc.php?p=', '/wp-admin/js/widgets/xmrlpc.php?p=',
+    '/wp-admin/css/colors/xmrlpc.php?p=', '/wp-admin/includes/xmrlpc.php?p=', '/wp-admin/css/colors/blue/xmrlpc.php?p=', '/wp-admin/xmrlpc.php?p=']
         for script in listaa:
             url = (i + "/" + script)
             while True:
