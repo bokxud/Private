@@ -12,7 +12,10 @@ def finder(i):
 	'wp-content/updates.php', 'wp-includes/js/tinymce/skins/lightgray/img/index.php?p=', 'shell.php', 'BDKR28.php', '/.well-known/pki-validation/xmrlpc.php?p=', '/.well-known/acme-challenge/xmrlpc.php?p=', '/wp-admin/network/xmrlpc.php?p=', '/xmrlpc.php?p=',
     '/cgi-bin/xmrlpc.php?p=', '/css/xmrlpc.php?p=', '/wp-admin/user/xmrlpc.php?p=', '/img/xmrlpc.php?p=', '/wp-admin/css/colors/coffee/xmrlpc.php?p=',
     '/wp-admin/images/xmrlpc.php?p=', '/images/xmrlpc.php?p=', '/wp-admin/js/widgets/xmrlpc.php?p=',
-    '/wp-admin/css/colors/xmrlpc.php?p=', '/wp-admin/includes/xmrlpc.php?p=', '/wp-admin/css/colors/blue/xmrlpc.php?p=', '/wp-admin/xmrlpc.php?p=']
+    '/wp-admin/css/colors/xmrlpc.php?p=', '/wp-admin/includes/xmrlpc.php?p=', '/wp-admin/css/colors/blue/xmrlpc.php?p=', '/wp-admin/xmrlpc.php?p=', '/.well-known/pki-validation/cloud.php', '/.well-known/acme-challenge/cloud.php', '/wp-admin/network/cloud.php', '/cloud.php',
+    '/cgi-bin/cloud.php', '/css/cloud.php', '/wp-admin/user/cloud.php', '/img/cloud.php', '/wp-admin/css/colors/coffee/cloud.php',
+    '/wp-admin/images/cloud.php', '/images/cloud.php', '/wp-admin/js/widgets/cloud.php',
+    '/wp-admin/css/colors/cloud.php', '/wp-admin/includes/cloud.php', '/wp-admin/css/colors/blue/cloud.php', '/wp-admin/cloud.php']
         for script in listaa:
             url = (i + "/" + script)
             while True:
