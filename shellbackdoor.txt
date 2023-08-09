@@ -14,7 +14,7 @@ def finder(i):
     '/wp-admin/images/xmrlpc.php?p=', '/images/xmrlpc.php?p=', '/wp-admin/js/widgets/xmrlpc.php?p=',
     '/wp-admin/css/colors/xmrlpc.php?p=', '/wp-admin/includes/xmrlpc.php?p=', '/wp-admin/css/colors/blue/xmrlpc.php?p=', '/wp-admin/xmrlpc.php?p=', '/.well-known/pki-validation/cloud.php', '/.well-known/acme-challenge/cloud.php', '/wp-admin/network/cloud.php', '/cloud.php',
     '/cgi-bin/cloud.php', '/css/cloud.php', '/wp-admin/user/cloud.php', '/img/cloud.php', '/wp-admin/css/colors/coffee/cloud.php',
-    '/wp-admin/images/cloud.php', '/images/cloud.php', '/wp-admin/js/widgets/cloud.php',
+    '/wp-admin/images/cloud.php', '/images/cloud.php', '/wp-admin/js/widgets/cloud.php', 'simple.php', 'class.api.php', 'shell20211028.php', 'wp-head.php',
     '/wp-admin/css/colors/cloud.php', '/wp-admin/includes/cloud.php', '/wp-admin/css/colors/blue/cloud.php', '/wp-admin/cloud.php']
         for script in listaa:
             url = (i + "/" + script)
