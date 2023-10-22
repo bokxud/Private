@@ -1,6 +1,14 @@
 files/
+images/
+tmp/
+tmps/
+upload/
 uploads/
 .well-known/
+admin/controller/extension/extension/
+admin/tmp/
+admin/upload/
+administrator/
 wp-old/
 .wp-cli/
 wp-json/
