@@ -177,7 +177,7 @@ def finder(i):
                     print(fw + "-|" + " Vuln > " + fg + url)
                     # bot.sendMessage(user, url+"\n")
                     with open("BDKR28_SHELL.txt", "a") as file:
-                        file.write(url + "\n")
+                        file.write(url + "?Mr=BDKR28" + "\n")
                         file.close()
                     SendMsg(url)
                 else:
