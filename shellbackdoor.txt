@@ -26,7 +26,7 @@ def finder(i):
                     print('[Vuln check] ======>>> '+url)
                     # bot.sendMessage(user, url+"\n")
                     with open("BDKR28_shell.txt", "a") as file:
-                        file.write(url + "\n")
+                        file.write(url + "?Mr=BDKR28" + "\n")
                         file.close()
                     SendMsg(url)
                 else:
