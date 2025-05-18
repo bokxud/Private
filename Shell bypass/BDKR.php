@@ -191,7 +191,7 @@ echo "</center></td>
 echo '</table>
 </div>';
 }
-echo '<br />re-Coded by 4-345-06-0999 <font color="red">1.0</font>, Coded By <font color="red"> Luqman1337</font>
+echo '<br />re-Coded by 4-345-06-0999 <font color="red">1.0</font>, Coded By <font color="red"> Mr. BDKR28</font>
 </BODY>
 </HTML>';
 function perms($file){
